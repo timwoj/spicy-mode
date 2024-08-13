@@ -77,10 +77,12 @@
    :language 'spicy
    :feature 'type
    '((type_decl name: (ident) @font-lock-type-face)
+     (field_decl type_: (void) @font-lock-type-face)
      (typename (ident) @font-lock-type-face)
      (cast (ident) @font-lock-type-face)
      (enum_decl name: (ident) @font-lock-type-face)
-     ("unit" @font-lock-type-face))
+     ("unit" @font-lock-type-face)
+     )
 
    :language 'spicy
    :feature 'variable
@@ -89,7 +91,8 @@
      (bitfield_field name: (ident) @font-lock-variable-name-face)
      (var_decl name: (ident) @font-lock-variable-name-face)
      (params (ident) @font-lock-variable-name-face)
-     (function_arg arg: (ident) @font-lock-variable-name-face))
+     (function_arg arg: (ident) @font-lock-variable-name-face)
+     )
 
    :language 'spicy
    :feature 'function-name

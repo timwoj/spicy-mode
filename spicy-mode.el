@@ -43,9 +43,17 @@
 
    :language 'spicy
    :feature 'constant
-   '(((integer) @font-lock-constant-face)
+   '(((boolean) @font-lock-constant-face)
+     ((bytes) @font-lock-constant-face)
+     ((char) @font-lock-constant-face)
      (unit_switch_case (expression) @font-lock-constant-face)
-     (unit_switch_case (expression) @font-lock-constant-face))
+     )
+
+   ; These could be font-lock-number-face but that face is nil by default
+   :language 'spicy
+   :feature 'number
+   '(((integer) @font-lock-constant-face)
+     ((real) @font-lock-constant-face))
 
    :language 'spicy
    :feature 'type
@@ -84,9 +92,9 @@
 
   (setq-local treesit-font-lock-settings spicy--treesit-font-lock-rules)
   (setq-local treesit-font-lock-feature-list
-              '((comment string)
+              '((comment string constant number)
                 (keyword preprocessor)
-                (constant type variable function-name)))
+                (type variable function-name)))
 
   (treesit-major-mode-setup))
 

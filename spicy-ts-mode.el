@@ -1,5 +1,5 @@
 (defcustom spicy-indent-offset 4
-  "Number of spaces for each indentation step in `spicy-mode'."
+  "Number of spaces for each indentation step in `spicy-ts-mode'."
   :version "0.1"
   :type 'integer
   :safe 'intergerp)
@@ -101,7 +101,7 @@
 
   "Spicy font-lock settings.")
 
-(define-derived-mode spicy-mode prog-mode "Spicy"
+(define-derived-mode spicy-ts-mode prog-mode "Spicy"
   "A mode for the Spicy programming language"
   (unless (treesit-ready-p 'spicy)
     (error "Tree-sitter for Spicy is not available"))
@@ -120,4 +120,4 @@
 
   (treesit-major-mode-setup))
 
-(provide 'spicy-mode)
+(provide 'spicy-ts-mode)

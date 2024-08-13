@@ -13,8 +13,10 @@
 
    :language 'spicy
    :feature 'string
-   '((string) @font-lock-string-face
-     (string) @contextual) ; Contextual special treatment.
+   '(((string) @font-lock-string-face)
+     ((string) @contextual)  ; Contextual special treatment.
+     ((char) @font-lock-string-face)
+     )
 
    :language 'spicy
    :feature 'keyword

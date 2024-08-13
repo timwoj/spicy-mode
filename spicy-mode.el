@@ -8,16 +8,16 @@
   (treesit-font-lock-rules
 
    :language 'spicy
-   :feature 'spicy-comment
+   :feature 'comment
    '((comment) @font-lock-comment-face)
 
    :language 'spicy
-   :feature 'spicy-string
+   :feature 'string
    '((string) @font-lock-string-face
      (string) @contextual) ; Contextual special treatment.
 
    :language 'spicy
-   :feature 'spicy-keyword
+   :feature 'keyword
    '((type_decl ("type") @font-lock-keyword-face)
      (module_decl ("module") @font-lock-keyword-face)
      (enum_decl ("enum") @font-lock-keyword-face)
@@ -38,17 +38,17 @@
      )
 
    :language 'spicy
-   :feature 'spicy-preprocessor
+   :feature 'preprocessor
    '((import ("import") @font-lock-preprocessor-face))
 
    :language 'spicy
-   :feature 'spicy-constant
+   :feature 'constant
    '(((integer) @font-lock-constant-face)
      (unit_switch_case (expression) @font-lock-constant-face)
      (unit_switch_case (expression) @font-lock-constant-face))
 
    :language 'spicy
-   :feature 'spicy-type
+   :feature 'type
    '((type_decl name: (ident) @font-lock-type-face)
      (typename (ident) @font-lock-type-face)
      (cast (ident) @font-lock-type-face)
@@ -56,7 +56,7 @@
      ("unit" @font-lock-type-face))
 
    :language 'spicy
-   :feature 'spicy-variable
+   :feature 'variable
    '((field_decl name: (ident) @font-lock-variable-name-face)
      (enum_label name: (ident) @font-lock-variable-name-face)
      (bitfield_field name: (ident) @font-lock-variable-name-face)
@@ -65,7 +65,7 @@
      (function_arg arg: (ident) @font-lock-variable-name-face))
 
    :language 'spicy
-   :feature 'spicy-function-name
+   :feature 'function-name
    '((function_decl name: (ident) @font-lock-function-name-face))
   )
 
@@ -84,9 +84,9 @@
 
   (setq-local treesit-font-lock-settings spicy--treesit-font-lock-rules)
   (setq-local treesit-font-lock-feature-list
-              '((spicy-comment spicy-string)
-                (spicy-keyword spicy-preprocessor)
-                (spicy-constant spicy-type spicy-variable spicy-function-name)))
+              '((comment string)
+                (keyword preprocessor)
+                (constant type variable function-name)))
 
   (treesit-major-mode-setup))
 

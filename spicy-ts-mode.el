@@ -42,7 +42,6 @@
      (foreach ("foreach") @font-lock-keyword-face)
      (for ("for") @font-lock-keyword-face)
      (assert ("assert") @font-lock-keyword-face)
-;     (assert ("assert-exception") @font-lock-keyword-face)
      (delete ("delete") @font-lock-keyword-face)
      (print ("print") @font-lock-keyword-face)
      (return ("return") @font-lock-keyword-face)
@@ -68,7 +67,7 @@
      (unit_switch_case (expression) @font-lock-constant-face)
      )
 
-   ; These could be font-lock-number-face but that face is nil by default
+   ;; These could be font-lock-number-face but that face is nil by default
    :language 'spicy
    :feature 'number
    '(((integer) @font-lock-constant-face)
@@ -97,7 +96,18 @@
    :language 'spicy
    :feature 'function-name
    '((function_decl name: (ident) @font-lock-function-name-face))
-  )
+   )
+
+  ;; Other faces that aren't currently covered here but could be:
+  ;; font-lock-function-call-face
+  ;; font-lock-variable-use-face
+  ;; font-lock-comment-delimiter-face
+  ;; font-lock-doc-face
+  ;; font-lock-negation-char-face
+  ;; font-lock-operator-face
+  ;; font-lock-property-name-face (this could be used instead of variable-name-face in some places)
+  ;; font-lock-property-use-face
+  ;; font-lock-bracket-face
 
   "Spicy font-lock settings.")
 

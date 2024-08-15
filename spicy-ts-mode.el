@@ -81,6 +81,7 @@
      (cast (ident) @font-lock-type-face)
      (enum_decl name: (ident) @font-lock-type-face)
      ("unit" @font-lock-type-face)
+     (parameterized_type (["iterator" "optional" "result" "set" "tuple" "vector" "view"]) @font-lock-type-face)
      )
 
    :language 'spicy
